@@ -3,12 +3,12 @@
 const numberBtns = document.querySelectorAll('.digit');
 const operationBtns = document.querySelectorAll('.operation');
 const resetBtn = document.querySelector('.modifier');
+const displayBoard = document.querySelector('#total');
+const errBoard = document.querySelector('#error-msg');
 
 let selectedNumbers = [];
-let displayBoard = 0;
+let displayValue = 0;
 
-console.log("numberBtns:", numberBtns);
-console.log("operationBtns:", operationBtns);
-console.log("resetBtn:", resetBtn);
+errBoard.innerText = '헬로';
 
 //addEventListener
