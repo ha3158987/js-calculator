@@ -1,12 +1,22 @@
 export default class Number {
-  constructor({number, target}) {
+  constructor({number, $target, onClick}) {
+    this.$target = $target;
     this.number = number;
-    this.target = target;
+    this.onClick = onClick;
     this.render();
   }
 
   render () {
-    const btnEl = `<button class="digit">${this.number}</button>`;
-    this.target.insertAdjacentHTML('beforeend', btnEl);
+    const $btnEl = document.createElement('button')
+    $btnEl.innerText = this.number
+    $btnEl.className = 'digit';
+
+    this.$target.appendChild($btnEl);
+
+    this.addEvent($btnEl, 'click', () => this.onClick(this.number));
+  }
+
+  addEvent ($el, event, callbackFn) {
+    $el.addEventListener(event, callbackFn)
   }
 }
