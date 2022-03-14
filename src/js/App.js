@@ -14,13 +14,15 @@ class App {
   }
 
   handleNumberClick(num) {
-    // 버튼이 눌리면 selectedNumbers를 업데이트 해야함. 3개 이상은 안들어가야 함.
-    const newSelectedNumArr = [];
-    newSelectedNumArr.push(num);
-    this.setState({
-      ...this.state,
-      selectedNumbers: [...this.state.selectedNumbers, ...newSelectedNumArr]
-    })
+    // 버튼이 눌리면 currNum 업데이트 해야함. 3개 이상은 안들어가야 함.
+    if(this.state.currNum.length <= 3) {
+      this.setState({
+        ...this.state,
+        currNum: this.state.currNum += num
+      })
+    } else {
+      // 에러메세지 노출 - "3자리수 이상의 연산은 불가능합니다."
+    }
 
     console.log(this.state)
   }
