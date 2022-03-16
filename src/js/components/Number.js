@@ -8,7 +8,7 @@ export default class Number {
 
   render () {
     const $btnEl = document.createElement('button')
-    $btnEl.innerText = this.number
+    $btnEl.innerText = this.number;
     $btnEl.className = 'digit';
 
     this.$target.appendChild($btnEl);
